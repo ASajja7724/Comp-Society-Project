@@ -13,4 +13,4 @@ def check_syntax(file_path):
   except SyntaxError as error:
     print(f"Syntax error found:\n File\"{error.filename}", line{error.lineno}\n{error.text.strip()}\n {'^':>{error.offset}}")
 
-check_syntax("README.md")
+check_syntax("README.py")
