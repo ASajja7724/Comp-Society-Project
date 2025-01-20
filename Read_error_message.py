@@ -6,11 +6,11 @@ def read_error_msg():   # function to access terminal and print error message to
 
 def check_syntax(file_path):
   try:
-    with open(file_path, "r") as file:
-      code = file.read()
+    with open(file_path, "r") as f:
+      code = f.read()
     compile(code, file_path, "exec")
     print("No syntax errors found.")
-  except SyntaxError as error:
-    print(f"Syntax error found:\n File\"{error.filename}", line{error.lineno}\n{error.text.strip()}\n {'^':>{error.offset}}")
+  except SyntaxError as e:
+    print(f"Syntax error found:\n File\"{e.filename}\", line{e.lineno}\n{e.text.strip()}\n ")
 
 check_syntax("README.py")
